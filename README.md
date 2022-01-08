@@ -1,1 +1,1 @@
-We hope that the model code will help reviewers understand our model in more detail. And the full code will be opened soon.
+The model code was open-sourced to help understand the paper in more detail. And the full code will be opened soon.
