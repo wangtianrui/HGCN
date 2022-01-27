@@ -1,6 +1,6 @@
 # HGCN
 
-The official repo of "HGCN: Harmonic Gated Compensation Network For Speech Enhancement", which was submitted to ICASSP2022.
+The official repo of "HGCN: Harmonic Gated Compensation Network For Speech Enhancement", which was accepted at ICASSP2022.
 
 ## How to use
 
