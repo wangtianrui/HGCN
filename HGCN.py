@@ -394,10 +394,12 @@ if __name__ == '__main__':
     import soundfile as sf
 
     dcrn_conf_ = {"time_ker": 2, "freq_ker": 5, "kernel_num": (16, 32, 64, 128, 128, 128), "rnn_hidden": 128}
-    hecrn = HGCN(cem_conf=dcrn_conf_, train_flag=True)
+    hgcn = HGCN(cem_conf=dcrn_conf_, train_flag=False)
     test_inp = torch.tensor(
         [sf.read(
             r"./wavs\fileid10_cleanBAC009S0657W0284_noiseuI44_PzWnCA_snr5_level-19.wav",
-            dtype="float32")[0][:16000 * 5]]
+            dtype="float32")[0]]
     )
-    results = hecrn(test_inp)
+    print(test_inp.size())
+    results = hgcn(test_inp)
+    print(results.size())
