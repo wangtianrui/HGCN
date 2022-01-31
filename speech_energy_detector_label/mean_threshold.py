@@ -30,7 +30,7 @@ def get_label():
                 mag = np.log(mag)
                 mag[np.isinf(mag)] = 0
                 all_log_mag_means.append(np.mean(mag, axis=-1))
-        all_log_mag_means = np.array(all_log_mag_means) # B,F
+        all_log_mag_means = np.array(all_log_mag_means)  # B,F
         np.save(r"512+128", all_log_mag_means)
         mu = np.mean(all_log_mag_means, axis=0)
         np.save(r"mu", mu)
@@ -41,6 +41,7 @@ def get_label():
 def for_test():
     stft_512 = ConvSTFT(512, 128, 512, "hanning", 'complex')
     clean_log_mag = np.log(load_wav_mag("../wavs/fileid10_BAC009S0657W0284.wav", stft_512))
+    print(clean_log_mag.shape)
 
     mu = np.expand_dims(np.load("mu.npy"), -1)
     sigma = np.expand_dims(np.load("sigma.npy"), -1)

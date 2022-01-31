@@ -16,5 +16,3 @@ python make_integral_matrix.py
 cd speech_energy_detector_label
 python mean_threshold.py
 ```
-
-#### step3: Start training
