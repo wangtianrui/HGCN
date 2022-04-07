@@ -73,8 +73,8 @@ def mag_phase(x):
     """
     real, imag = torch.chunk(x, 2, dim=1)
     mags = torch.sqrt(real ** 2 + imag ** 2 + 1e-8)
-    real_phase = real / (mags.sqrt() + 1e-8)
-    imag_phase = imag / (mags.sqrt() + 1e-8)
+    real_phase = real / (mags + 1e-8)
+    imag_phase = imag / (mags + 1e-8)
     phase = torch.atan(
         imag_phase / (real_phase + 1e-8)
     )
